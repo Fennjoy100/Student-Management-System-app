@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import os
 from dotenv import load_dotenv
@@ -29,6 +29,16 @@ app.register_blueprint(teachers_bp, url_prefix='/teachers', name='teachers_local
 app.register_blueprint(attendance_bp, url_prefix='/attendance', name='attendance_local')
 app.register_blueprint(grades_bp, url_prefix='/grades', name='grades_local')
 app.register_blueprint(courses_bp, url_prefix='/courses', name='courses_local')
+
+@app.route('/api/debug')
+def api_debug():
+    return jsonify({
+        "path": request.path,
+        "url": request.url,
+        "base_url": request.base_url,
+        "method": request.method,
+        "headers": dict(request.headers)
+    })
 
 @app.route('/api')
 @app.route('/api/')

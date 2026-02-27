@@ -13,25 +13,18 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend/app.py"
+      "source": "/api/(.*)",
+      "destination": "/backend/app.py"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "/frontend/assets/$1"
+      "source": "/assets/(.*)",
+      "destination": "/frontend/assets/$1"
     },
     {
-      "src": "/favicon.ico",
-      "dest": "/frontend/favicon.ico"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/index.html"
+      "source": "/(.*)",
+      "destination": "/frontend/index.html"
     }
   ]
 }

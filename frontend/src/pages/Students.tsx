@@ -57,10 +57,10 @@ const Students = () => {
             const data = await response.json();
             setStudents(data);
             setLoading(false);
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error fetching students:', error);
             setLoading(false);
-            showNotification('Failed to load students', 'error');
+            showNotification(`Failed to load students: ${error.message || 'Unknown error'}`, 'error');
         }
     };
 
