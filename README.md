@@ -2,7 +2,7 @@
 
 EduFlow is a modern, full-stack Student Management System designed to streamline educational administration. It features a sleek, glassmorphism-inspired UI and a robust Flask-based backend with MongoDB integration.
 
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/Fennjoy100/APP)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/Fennjoy100/gh.git)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -43,8 +43,8 @@ EduFlow is a modern, full-stack Student Management System designed to streamline
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Fennjoy100/APP.git
-cd APP
+git clone https://github.com/Fennjoy100/gh.git
+cd gh
 ```
 
 ### 2. Backend Setup
@@ -157,4 +157,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-**Developed with ❤️ by [Fennjoy](https://github.com/Fennjoy100)**
+**Developed with ❤️ by [Fennjoy](https://github.com/Fennjoy100/gh)**
