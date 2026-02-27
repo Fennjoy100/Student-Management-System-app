@@ -22,6 +22,11 @@ app.register_blueprint(attendance_bp, url_prefix='/api/attendance')
 app.register_blueprint(grades_bp, url_prefix='/api/grades')
 app.register_blueprint(courses_bp, url_prefix='/api/courses')
 
+@app.route('/api')
+@app.route('/api/')
+def api_home():
+    return jsonify({"message": "API is online", "status": "success"})
+
 @app.route('/')
 def home():
     return jsonify({"message": "Student Management System API is running", "status": "success"})
