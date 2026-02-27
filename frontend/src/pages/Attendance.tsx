@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Card from '../components/Card';
-import { Search, Calendar, CheckCircle2, XCircle, AlertCircle, Save } from 'lucide-react';
+import { Calendar, CheckCircle2, XCircle, AlertCircle, Save } from 'lucide-react';
 import './Attendance.css';
 
 const Attendance = () => {

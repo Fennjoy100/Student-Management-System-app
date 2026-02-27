@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Card from '../components/Card';
-import { Search, Plus, Filter, MoreVertical, Edit, Trash2, Mail, Book } from 'lucide-react';
+import { Search, Plus, Filter, MoreVertical, Edit, Trash2, Book } from 'lucide-react';
 import './Students.css'; // Reusing Students CSS for consistency
 
 const Teachers = () => {

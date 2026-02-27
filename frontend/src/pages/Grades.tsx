@@ -1,6 +1,5 @@
-import React from 'react';
 import Card from '../components/Card';
-import { Search, Save, ChevronRight, FileText } from 'lucide-react';
+import { Save, ChevronRight, FileText } from 'lucide-react';
 import './Grades.css';
 
 const Grades = () => {

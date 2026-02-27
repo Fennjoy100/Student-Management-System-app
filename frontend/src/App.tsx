@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
@@ -11,7 +11,7 @@ import Login from './pages/Login';
 import './App.css';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true); // Simulate auth for now
+  const [isAuthenticated] = useState(true); // Simulate auth for now
 
   if (!isAuthenticated) {
     return <Login />;
