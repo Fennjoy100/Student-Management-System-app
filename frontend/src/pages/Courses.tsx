@@ -52,7 +52,8 @@ const Courses = () => {
 
     const fetchCourses = async () => {
         try {
-            const response = await fetch('/api/courses/');
+            const response = await fetch('/api/courses');
+            if (!response.ok) throw new Error('Failed to fetch');
             const data = await response.json();
             setCourses(data);
         } catch (error) {

@@ -52,7 +52,8 @@ const Students = () => {
 
     const fetchStudents = async () => {
         try {
-            const response = await fetch('/api/students/');
+            const response = await fetch('/api/students');
+            if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
             setStudents(data);
             setLoading(false);

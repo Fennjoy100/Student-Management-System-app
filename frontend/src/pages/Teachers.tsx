@@ -52,7 +52,8 @@ const Teachers = () => {
 
     const fetchTeachers = async () => {
         try {
-            const response = await fetch('/api/teachers/');
+            const response = await fetch('/api/teachers');
+            if (!response.ok) throw new Error('Failed to fetch');
             const data = await response.json();
             setTeachers(data);
             setLoading(false);
