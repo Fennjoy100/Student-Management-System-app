@@ -15,15 +15,19 @@ from routes.attendance import attendance_bp
 from routes.grades import grades_bp
 from routes.courses import courses_bp
 
-# Register Blueprints with fallback for different deployment environments
-prefix_list = ['', '/api']
+# Register Blueprints with /api prefix
+app.register_blueprint(students_bp, url_prefix='/api/students')
+app.register_blueprint(teachers_bp, url_prefix='/api/teachers')
+app.register_blueprint(attendance_bp, url_prefix='/api/attendance')
+app.register_blueprint(grades_bp, url_prefix='/api/grades')
+app.register_blueprint(courses_bp, url_prefix='/api/courses')
 
-for prefix in prefix_list:
-    app.register_blueprint(students_bp, url_prefix=f'{prefix}/students', name=f'students_{prefix.replace("/", "")}')
-    app.register_blueprint(teachers_bp, url_prefix=f'{prefix}/teachers', name=f'teachers_{prefix.replace("/", "")}')
-    app.register_blueprint(attendance_bp, url_prefix=f'{prefix}/attendance', name=f'attendance_{prefix.replace("/", "")}')
-    app.register_blueprint(grades_bp, url_prefix=f'{prefix}/grades', name=f'grades_{prefix.replace("/", "")}')
-    app.register_blueprint(courses_bp, url_prefix=f'{prefix}/courses', name=f'courses_{prefix.replace("/", "")}')
+# For local development compatibility without /api prefix
+app.register_blueprint(students_bp, url_prefix='/students', name='students_local')
+app.register_blueprint(teachers_bp, url_prefix='/teachers', name='teachers_local')
+app.register_blueprint(attendance_bp, url_prefix='/attendance', name='attendance_local')
+app.register_blueprint(grades_bp, url_prefix='/grades', name='grades_local')
+app.register_blueprint(courses_bp, url_prefix='/courses', name='courses_local')
 
 @app.route('/api')
 @app.route('/api/')
