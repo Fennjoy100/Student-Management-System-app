@@ -1,0 +1,161 @@
+.attendance-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.controls-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.control-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.control-group input,
+.control-group select {
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    outline: none;
+}
+
+.attendance-stats-brief {
+    margin-left: auto;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.stat-brief {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.present {
+    background-color: var(--success);
+}
+
+.dot.absent {
+    background-color: var(--danger);
+}
+
+.dot.late {
+    background-color: var(--warning);
+}
+
+.attendance-table-card {
+    padding: 0;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table th {
+    padding: 1.25rem 2rem;
+    background-color: var(--bg-main);
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+}
+
+.attendance-table td {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.student-info-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.stu-id {
+    font-size: 0.75rem;
+    font-family: monospace;
+    color: var(--text-muted);
+}
+
+.stu-name {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.status-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.status-opt {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.status-opt.present.active {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    border-color: var(--success);
+}
+
+.status-opt.absent.active {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+.status-opt.late.active {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+    border-color: var(--warning);
+}
+
+.status-opt:hover:not(.active) {
+    background-color: var(--bg-main);
+}
+
+.remark-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-size: 0.85rem;
+}

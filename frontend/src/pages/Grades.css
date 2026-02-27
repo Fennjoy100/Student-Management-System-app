@@ -1,0 +1,125 @@
+.grades-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-card .card-body {
+    padding: 1rem 1.5rem;
+}
+
+.filter-inner {
+    display: flex;
+    gap: 2rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.filter-group select {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-width: 150px;
+}
+
+.grades-table-card {
+    padding: 0;
+}
+
+.grades-table-container {
+    overflow-x: auto;
+}
+
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grades-table th {
+    padding: 1rem;
+    background-color: var(--bg-main);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.grades-table th:first-child {
+    text-align: left;
+    padding-left: 2rem;
+}
+
+.grades-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.student-cell {
+    text-align: left !important;
+    padding-left: 2rem !important;
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.grade-input {
+    width: 60px;
+    padding: 0.4rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    text-align: center;
+    font-weight: 500;
+}
+
+.grade-input.danger {
+    color: var(--danger);
+    border-color: rgba(239, 68, 68, 0.3);
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+.avg-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.avg-badge.high {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+.avg-badge.mid {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+.avg-badge.low {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+}
