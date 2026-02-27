@@ -13,9 +13,11 @@ import './Sidebar.css';
 
 interface SidebarProps {
   onLogout: () => void;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
+const Sidebar: React.FC<SidebarProps> = ({ onLogout, isOpen, onClose }) => {
   const menuItems = [
     { icon: <LayoutDashboard size={20} />, label: 'Dashboard', path: '/' },
     { icon: <Users size={20} />, label: 'Students', path: '/students' },
@@ -27,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
   ];
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-header">
         <div className="logo-icon">C</div>
         <h2>Chart</h2>
@@ -36,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
       <nav className="sidebar-nav">
         <ul>
           {menuItems.map((item, index) => (
-            <li key={index}>
+            <li key={index} onClick={onClose}>
               <NavLink
                 to={item.path}
                 className={({ isActive }) => isActive ? 'active' : ''}
@@ -50,7 +52,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
       </nav>
 
       <div className="sidebar-footer">
-        <button className="logout-btn" onClick={onLogout}>
+        <button className="logout-btn" onClick={() => { onLogout(); onClose(); }}>
           <LogOut size={20} />
           <span>Logout</span>
         </button>

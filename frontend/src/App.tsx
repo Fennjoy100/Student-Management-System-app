@@ -14,11 +14,10 @@ import Login from './pages/Login';
 import './App.css';
 
 function App() {
-  // Initialize from localStorage - default to true if never set for convenience, 
-  // but we'll use 'isLoggedIn' key to track transitions
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return localStorage.getItem('isLoggedIn') !== 'false';
   });
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     // Initial theme setup
@@ -33,6 +32,9 @@ function App() {
     setIsAuthenticated(false);
   };
 
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const closeSidebar = () => setSidebarOpen(false);
+
   if (!isAuthenticated) {
     return <Login onLogin={() => {
       localStorage.setItem('isLoggedIn', 'true');
@@ -42,9 +44,13 @@ function App() {
 
   return (
     <div className="app-container">
-      <Sidebar onLogout={handleLogout} />
+      <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} onLogout={handleLogout} />
+
+      {/* Mobile Backdrop */}
+      {sidebarOpen && <div className="sidebar-backdrop" onClick={closeSidebar}></div>}
+
       <main className="main-content">
-        <Navbar onLogout={handleLogout} />
+        <Navbar onToggleSidebar={toggleSidebar} onLogout={handleLogout} />
         <div className="content-inner">
           <Routes>
             <Route path="/" element={<Dashboard />} />

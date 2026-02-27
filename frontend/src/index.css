@@ -143,6 +143,17 @@ ul {
   min-height: 100vh;
 }
 
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1rem;
+}
+
+.table-container table {
+  min-width: 600px;
+}
+
 .main-content {
   flex: 1;
   padding: 2rem;
@@ -155,6 +166,18 @@ ul {
   .main-content {
     margin-left: 0;
     padding: 1rem;
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 95;
+    animation: fadeIn 0.3s ease;
   }
 }
 

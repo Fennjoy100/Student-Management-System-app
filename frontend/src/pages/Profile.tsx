@@ -217,6 +217,25 @@ const Profile = () => {
                     border-radius: 4px;
                     width: 100%;
                 }
+
+                @media (max-width: 768px) {
+                    .profile-header-alt {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                    .page-header {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 1rem;
+                    }
+                    .page-header button {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    .settings-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
             `}</style>
         </div>
     );

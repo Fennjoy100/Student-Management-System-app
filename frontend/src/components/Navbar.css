@@ -108,9 +108,36 @@
     border: 1px solid var(--border);
 }
 
+/* Menu toggle for mobile */
+.menu-toggle {
+    display: none;
+    color: var(--text-main);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .search-bar {
         display: none;
+    }
+
+    .user-info,
+    .v-divider {
+        display: none;
+    }
+
+    .navbar-actions {
+        gap: 0.75rem;
     }
 }
 

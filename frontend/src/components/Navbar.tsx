@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Search, Bell, User, Settings, LogOut, ShieldCheck } from 'lucide-react';
+import { Search, Bell, User, Settings, LogOut, ShieldCheck, Menu } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 interface NavbarProps {
     onLogout: () => void;
+    onToggleSidebar: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
+const Navbar: React.FC<NavbarProps> = ({ onLogout, onToggleSidebar }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const navigate = useNavigate();
@@ -39,6 +40,9 @@ const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
 
     return (
         <header className="navbar">
+            <button className="menu-toggle" onClick={onToggleSidebar}>
+                <Menu size={24} />
+            </button>
             <div className="search-bar">
                 <Search size={18} />
                 <input
