@@ -31,7 +31,8 @@
     text-transform: uppercase;
 }
 
-.filter-group select {
+.filter-group select,
+.filter-input {
     padding: 0.5rem 1rem;
     border-radius: var(--radius);
     border: 1px solid var(--border);
@@ -95,7 +96,17 @@
     font-weight: 500;
 }
 
-.grade-input.danger {
+.grade-input.high {
+    color: var(--success);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.grade-input.mid {
+    color: var(--warning);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.grade-input.low {
     color: var(--danger);
     border-color: rgba(239, 68, 68, 0.3);
     background-color: rgba(239, 68, 68, 0.05);
@@ -107,6 +118,28 @@
     border-radius: 100px;
     font-weight: 700;
     font-size: 0.85rem;
+}
+
+.student-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.stu-id-small {
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+}
+
+.stu-name-bold {
+    font-weight: 700;
+}
+
+.table-actions-cell {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .avg-badge.high {

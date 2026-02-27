@@ -11,22 +11,26 @@ import {
 } from 'lucide-react';
 import './Sidebar.css';
 
-const Sidebar = () => {
+interface SidebarProps {
+  onLogout: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
   const menuItems = [
     { icon: <LayoutDashboard size={20} />, label: 'Dashboard', path: '/' },
     { icon: <Users size={20} />, label: 'Students', path: '/students' },
     { icon: <UserSquare2 size={20} />, label: 'Teachers', path: '/teachers' },
     { icon: <BookOpen size={20} />, label: 'Courses', path: '/courses' },
     { icon: <CalendarCheck size={20} />, label: 'Attendance', path: '/attendance' },
-    { icon: <GraduationCap size={20} />, label: 'Grades', path: '/grades' },
+    { icon: <GraduationCap size={20} />, label: 'Results', path: '/grades' },
     { icon: <Settings size={20} />, label: 'Settings', path: '/settings' },
   ];
 
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <div className="logo-icon">S</div>
-        <h2>EduFlow</h2>
+        <div className="logo-icon">C</div>
+        <h2>Chart</h2>
       </div>
 
       <nav className="sidebar-nav">
@@ -46,7 +50,7 @@ const Sidebar = () => {
       </nav>
 
       <div className="sidebar-footer">
-        <button className="logout-btn">
+        <button className="logout-btn" onClick={onLogout}>
           <LogOut size={20} />
           <span>Logout</span>
         </button>

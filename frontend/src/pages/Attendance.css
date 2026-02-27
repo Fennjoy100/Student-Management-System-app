@@ -159,3 +159,56 @@
     color: var(--text-main);
     font-size: 0.85rem;
 }
+
+/* Action Button Colors */
+.action-btn.delete {
+    color: #ef4444 !important;
+    /* Red */
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.action-btn.delete:hover {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    border-color: #ef4444 !important;
+}
+
+.action-btn.edit {
+    color: #6366f1;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.action-btn.edit:hover {
+    background-color: rgba(99, 102, 241, 0.1);
+    border-color: #6366f1;
+}
+
+.btn-success {
+    background-color: #10b981 !important;
+    /* Green */
+    color: white !important;
+    border: none !important;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-success:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    transform: translateY(-1px);
+}

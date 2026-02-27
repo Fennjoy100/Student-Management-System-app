@@ -10,13 +10,17 @@ CORS(app)
 
 # Import routes
 from routes.students import students_bp
+from routes.teachers import teachers_bp
 from routes.attendance import attendance_bp
 from routes.grades import grades_bp
+from routes.courses import courses_bp
 
 # Register Blueprints
 app.register_blueprint(students_bp, url_prefix='/api/students')
+app.register_blueprint(teachers_bp, url_prefix='/api/teachers')
 app.register_blueprint(attendance_bp, url_prefix='/api/attendance')
 app.register_blueprint(grades_bp, url_prefix='/api/grades')
+app.register_blueprint(courses_bp, url_prefix='/api/courses')
 
 @app.route('/')
 def home():
