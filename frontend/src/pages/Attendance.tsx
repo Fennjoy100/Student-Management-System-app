@@ -46,7 +46,7 @@ const Attendance = () => {
 
     const fetchAttendance = async () => {
         try {
-            const response = await fetch(`/api/attendance/?date=${selectedDate}&class=${selectedClass}`);
+            const response = await fetch(`/api/attendance?date=${selectedDate}&class=${selectedClass}`);
             const result = await response.json();
 
             if (result.data && result.data.length > 0) {
@@ -90,7 +90,7 @@ const Attendance = () => {
     const handleSave = async () => {
         setSaving(true);
         try {
-            const response = await fetch('/api/attendance/', {
+            const response = await fetch('/api/attendance', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

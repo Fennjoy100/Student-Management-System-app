@@ -60,7 +60,7 @@ const Grades = () => {
 
     const fetchGrades = async () => {
         try {
-            const response = await fetch(`/api/grades/?date=${selectedDate}&grade=${selectedGrade}&term=${selectedTerm}`);
+            const response = await fetch(`/api/grades?date=${selectedDate}&grade=${selectedGrade}&term=${selectedTerm}`);
             const data = await response.json();
             if (data && data.length > 0) {
                 setGradeData(data);
@@ -86,7 +86,7 @@ const Grades = () => {
     const handleSave = async () => {
         setSaving(true);
         try {
-            const response = await fetch('/api/grades/', {
+            const response = await fetch('/api/grades', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

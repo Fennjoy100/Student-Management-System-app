@@ -106,7 +106,7 @@ const Teachers = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const url = editingTeacher ? `/api/teachers/${editingTeacher.id}` : '/api/teachers/';
+            const url = editingTeacher ? `/api/teachers/${editingTeacher.id}` : '/api/teachers';
             const method = editingTeacher ? 'PUT' : 'POST';
 
             const response = await fetch(url, {

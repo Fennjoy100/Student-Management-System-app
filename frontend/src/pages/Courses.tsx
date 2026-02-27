@@ -84,7 +84,7 @@ const Courses = () => {
 
     const handleSave = async (e: React.FormEvent) => {
         e.preventDefault();
-        const url = editingCourse ? `/api/courses/${editingCourse.id}` : '/api/courses/';
+        const url = editingCourse ? `/api/courses/${editingCourse.id}` : '/api/courses';
         const method = editingCourse ? 'PUT' : 'POST';
 
         try {
